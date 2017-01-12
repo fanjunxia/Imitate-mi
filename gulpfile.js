@@ -36,7 +36,7 @@ gulp.task('watch', function () {
     // 监听 html
     gulp.watch('src/index.html', ['html']);
     // 监听 scss['src/home/sass/*.scss',]
-    gulp.watch(['src/base/*.scss', 'src/home/sass/*.scss'], ['css']);
+    gulp.watch(['src/base/*.scss', 'src/home/scss/*.scss'], ['css']);
 });
 
 //======================默认任务
