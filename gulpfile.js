@@ -10,23 +10,16 @@ var connect = require('gulp-connect');
 //======================注册任务
 gulp.task('html', function () {
     gulp.src('src/index.html')
-        // .pipe(gulp.dest('dist/'))
         .pipe(connect.reload());
 });
 
-gulp.task('sass', function () {
-    // 指明源文件路径、并进行文件匹配（style: 'compressed' 表示输出格式）
-    return sass('src/home/sass/style.scss', {style: 'compressed'})
+gulp.task('css', function () {
+    return sass('src/home/scss/style.scss', {style: 'compressed'})
         .on('error', function (err) {
             console.error('Error!', err.message); // 显示错误信息
         })
         .pipe(gulp.dest('src/home/css'))
         .pipe(connect.reload());
-});
-
-gulp.task('font', function () {
-    gulp.src('src/font/**')
-        .pipe(gulp.dest('dist/font/'));
 });
 
 gulp.task('connect', function () {
@@ -43,8 +36,9 @@ gulp.task('watch', function () {
     // 监听 html
     gulp.watch('src/index.html', ['html']);
     // 监听 scss['src/home/sass/*.scss',]
-    gulp.watch(['src/base/*.scss','src/home/sass/*.scss'], ['sass']);
+    gulp.watch(['src/base/*.scss', 'src/home/sass/*.scss'], ['css']);
 });
 
 //======================默认任务
-gulp.task('default', ['html', 'sass', 'watch', 'connect']);
+gulp.task('default', ['html', 'css', 'watch', 'connect']);
+
