@@ -1,0 +1,239 @@
+/*----------color---------*/
+$color-base: #333333;
+$color-gray1: #BCB0B0;
+$color-gray2: #FAFAFA;
+$color-orange: #FF6700;
+/*-----------public---------*/
+h1, .h1 {
+  font-size: 26px;
+}
+
+h2, .h2 {
+  font-size: 22px;
+}
+
+.inner {
+  width: 1240px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.col-4 {
+  width: 300px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.col-5 {
+  width: 238px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+a {
+  color: $color-base;
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+.ir{
+  display: block;
+  text-indent: -9999999em;
+  overflow: hidden;
+}
+
+.spacer{
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background-color: #424242;
+  margin:0 6px;
+}
+/*----------topBar,header,footer,site-info--------*/
+body {
+  color: $color-base;
+}
+
+/*---------topBar----------*/
+.topBar {
+  height: 40px;
+  line-height: 40px;
+  background-color: #333333;
+  font-size: 12px;
+  a{
+    color: #A8A8A8;
+    &:hover{
+      color: #ffffff;
+    }
+  }
+  .topBar-nav{
+    float: left;
+  }
+  .topBar-cart{
+    float: right;
+    a{
+      display: block;
+      width: 120px;
+      height: 40px;
+      background-color: #424242;
+      text-align: center;
+      &:hover{
+        background-color: #ffffff;
+        color: $color-orange;
+      }
+    }
+    .cart-icon{
+      margin-right: 5px;
+    }
+  }
+  .cart-icon{
+    font-size: 18px;
+  }
+  .topBar-info{
+    float: right;
+    margin-right: 15px;
+    a{
+      display: inline-block;
+      height: 40px;
+      padding: 0 5px;
+    }
+  }
+}
+/*----------footer-----------*/
+.footer{
+  background-color: #ffffff;
+  font-size: 12px;
+  a{
+    color: #616161;
+    &:hover{
+      color: $color-orange;
+    }
+  }
+  .footer-service {
+    padding: 27px 0;
+    border-bottom:1px solid  #E0E0E0;
+    width: 1245px;
+  }
+  .footer-service-item {
+    float: left;
+    width: 248px;
+    border-right: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 16px;
+    a{
+      display: inline-block;
+    }
+    img{
+      vertical-align: middle;
+      position: relative;
+      top: -2px;
+      right: 5px;
+    }
+  }
+  /*--footer-links---*/
+  .footer-link{
+    padding: 40px 0;
+  }
+  .col-links{
+    width: 160px;
+    float: left;
+  }
+  .col-links-tit{
+    margin-bottom: 16px;
+  }
+  .col-links-con{
+    margin-top: 10px;
+    a{
+      color: #81817d;
+      &:hover{
+        color: $color-orange;
+      }
+    }
+  }
+  .col-concat{
+    float: right;
+    width: 251px;
+    border-left: 1px solid #E0E0E0;
+    text-align: center;
+  }
+  .phone{
+    font-size: 22px;
+    color: $color-orange;
+  }
+  .concat-info{
+    font-size: 12px;
+  }
+  .btn{
+    display: inline-block;
+    width: 118px;
+    height: 28px;
+    color: $color-orange;
+    border: 1px solid $color-orange;
+    line-height: 28px;
+    margin-top: 16px;
+    .btn-icon{
+      margin-right: 3px;
+    }
+    &:hover{
+      background-color: $color-orange;
+      color: #ffffff;
+    }
+  }
+}
+/*----------site-info-----------*/
+.site-info{
+  background-color: $color-gray2;
+  padding: 30px 0;
+  font-size: 12px;
+  .logo{
+    float: left;
+    width: 56px;
+    height: 56px;
+    background: url('../../base/images/logo-footer.png') no-repeat center;
+  }
+  .info-text{
+    float: left;
+    margin-left: 10px;
+    color: #B0B0B2;
+    a{
+      color: #B0B0B2;
+    }
+    .info-links{
+      a{
+        color: #797981;
+      }
+    }
+    .spacer{
+      background-color: #797981;
+    }
+    a:hover{
+      color: $color-orange;
+    }
+  }
+  .sites{
+    float: right;
+    a{
+      display: inline-block;
+      width: 85px;
+      height: 28px;
+      margin-left: 8px;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .slogan{
+    width: 100%;
+    text-align: center;
+    float: left;
+    margin-top: 30px;
+    i{
+      display: inline-block;
+      width: 267px;
+      height: 19px;
+      background: url('../../base/images/slogan2016.png') no-repeat center;
+    }
+  }
+}
