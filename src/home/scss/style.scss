@@ -1,9 +1,38 @@
 @import "../../base/reset";
 @import "../../base/common";
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+$conW: $width+$m14;
+@mixin ml14 {
+  margin-left: 14px;
+}
+
+@mixin mb14 {
+  margin-bottom: 14px;
+}
+
+@mixin span4{
+  width: $conW/20*4-$m14;
+}
+
+@mixin span5{
+  width: $conW/20*5-$m14;
+}
+
+@mixin span16{
+  width: $conW/20*16-$m14;
+}
 
 h2, .h2 {
   font-size: 22px;
   height: 100%;
+}
+h3, .h3 {
+  font-size: 14px;
 }
 
 .box {
@@ -13,60 +42,4 @@ h2, .h2 {
   height: 58px;
   line-height: 58px;
 }
-.box-bd {
-  width: 1255px;
-}
-
-.col{
-  transition:all 0.2s linear;
-  margin-bottom: 14px;
-  margin-right: 14px;
-  text-align: center;
-  float: left;
-  a{
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-}
-.col:hover{
-  box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
-  transform:translate(-2px,-2px);
-}
-.col-4 {
-  width: 299.5px;
-}
-.col-5 {
-  width: 236.8px;
-}
-
 /*-----------video----------*/
-.video{
-  margin-bottom: 60px;
-  a:hover{
-    color: $color-orange;
-  }
-  .col{
-    background-color: #ffffff;
-    width: 296px;
-    height: 285px;
-  }
-  .fig-img{
-    display: block;
-    margin-bottom: 24px;
-    position: relative;
-    .play{
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      font-size: 40px;
-    }
-  }
-  .tit{
-    margin-bottom: 10px;
-  }
-  .desc{
-    color: $color-gray1;
-    font-size: 12px;
-  }
-}
