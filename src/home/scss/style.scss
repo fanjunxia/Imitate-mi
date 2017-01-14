@@ -163,14 +163,16 @@ h3, .h3 {
     height: 460px;
   }
   .banner-list{
-    width: 700%;
+    width: 100%;
     height: 460px;
     position: absolute;
     top: 0;
     left: 0;
   }
   .item{
-    float: left;
+    position: absolute;
+    left: 0;
+    top: 0;
     img{
       width: $width;
       height: 460px;
@@ -180,6 +182,7 @@ h3, .h3 {
     position: absolute;
     bottom: 25px;
     left: 90%;
+    z-index:100;
     .pager {
       float: left;
       padding: 10px;
@@ -213,6 +216,7 @@ h3, .h3 {
       font-size: 30px;
       color: #ffffff;
       text-align: center;
+      z-index:100;
     }
     .prev {
       left: $conW/5-$m14;

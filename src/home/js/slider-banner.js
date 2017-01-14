@@ -3,8 +3,10 @@
  */
 "use strict";
 $(function () {
-    var $slider1=$('.slider1');
-    $slider1.each(function (index, ele) {
+    var $sliderBanner = $('.slider-banner');
+    var $items= $sliderBanner.find('.item');
+    $items.eq(0).css('z-index',10);
+    $sliderBanner.each(function (index, ele) {
         var $that = $(this);
         pagersWrapper();
         pagerClick();
@@ -15,6 +17,17 @@ $(function () {
         $that.find('.next').on('click', function () {
             btnClick('r');
         });
+
+        $that.timer=null;
+        loop();
+        $sliderBanner.find('.list,.pagers-wrapper,.control').on('mouseover',function () {
+           clearInterval($that.timer);
+        });
+        $sliderBanner.find('.list,.pagers-wrapper,.control').on('mouseout',function () {
+            loop();
+        });
+
+
 
         /*-----------设置pager的内容及位置*/
         function pagersWrapper() {
@@ -33,35 +46,39 @@ $(function () {
         /*-----------control点击*/
         function btnClick(flag) {
             var $list = $that.find('.list');
-            if (flag == 'r' && $that.key < $list.find('.item').length - 1) {
+            if (flag == 'r' && $that.key < $items.length - 1) {
                 $that.key++;
+                pageSwitch();
             }
             else if (flag == 'l' && $that.key > 0) {
                 $that.key--;
+                pageSwitch();
             }
-            // console.log('key=' + $that.key + ' ;flag=' + flag);
-            pageSwitch();
         }
 
         /*-----------pager点击*/
         function pagerClick() {
             var $pager = $that.find('.pager');
             $pager.on('click', function () {
-                $that.key=$(this).index();
+                $that.key = $(this).index();
                 pageSwitch();
             });
         }
-
-        /*-------无限循环------*/
-
         /*页面切换*/
         function pageSwitch() {
-            var $list = $that.find('.list');
-            $list.stop().animate({
-                left: -$that.key * $slider1.width()
-            }, 300);
+            // $items.css('opacity',0);
+            $items.stop().css({
+                opacity:0.7,
+                zIndex:-1
+            });
+            $items.eq($that.key).css({
+                zIndex:10
+            }).stop().animate({
+                opacity:1
+            }, 500);
             pagerActive($that.key);
         }
+
         /*pagerAcive*/
         function pagerActive(index) {
             var $pager = $that.find('.pager');
@@ -69,6 +86,17 @@ $(function () {
                 $(this).removeClass('active');
             });
             $pager.eq(index).addClass('active');
+        }
+
+        /*无限循环*/
+        function loop() {
+            $that.timer=setInterval(function() {
+                $that.key++;
+                if($that.key > $items.length - 1){
+                    $that.key=0;
+                }
+                pageSwitch();
+            },3000);
         }
     });
 });
