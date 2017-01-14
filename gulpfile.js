@@ -9,12 +9,12 @@ var connect = require('gulp-connect');
 
 //======================注册任务
 gulp.task('html', function () {
-    gulp.src('src/index.html')
+    gulp.src('src/*.html')
         .pipe(connect.reload());
 });
 
 gulp.task('css', function () {
-    return sass('src/home/scss/style.scss', {style: 'compressed'})
+    return sass('src/home/scss/*.scss', {style: 'compressed'})
         .on('error', function (err) {
             console.error('Error!', err.message); // 显示错误信息
         })
@@ -34,9 +34,9 @@ gulp.task('connect', function () {
 //=====================监听任务
 gulp.task('watch', function () {
     // 监听 html
-    gulp.watch('src/index.html', ['html']);
+    gulp.watch('src/*.html', ['html']);
     // 监听 scss['src/home/sass/*.scss',]
-    gulp.watch(['src/base/*.scss', 'src/home/scss/*.scss'], ['css']);
+    gulp.watch(['src/**/*.scss'], ['css']);
 });
 
 //======================默认任务

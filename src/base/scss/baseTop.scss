@@ -1,0 +1,46 @@
+@import "reset";
+/*---------topBar----------*/
+.topBar {
+  height: 40px;
+  line-height: 40px;
+  background-color: #333333;
+  font-size: 12px;
+  a{
+    color: #A8A8A8;
+    &:hover{
+      color: #ffffff;
+    }
+  }
+  .topBar-nav{
+    float: left;
+  }
+  .topBar-cart{
+    float: right;
+    a{
+      display: block;
+      width: 120px;
+      height: 40px;
+      background-color: #424242;
+      text-align: center;
+      &:hover{
+        background-color: #ffffff;
+        color: $color-orange;
+      }
+    }
+    .cart-icon{
+      margin-right: 5px;
+    }
+  }
+  .cart-icon{
+    font-size: 18px;
+  }
+  .topBar-info{
+    float: right;
+    margin-right: 15px;
+    a{
+      display: inline-block;
+      height: 40px;
+      padding: 0 5px;
+    }
+  }
+}
